@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@aws-cdk/aws-appsync": "^1.74.0",
+    "@aws-cdk/aws-cloudfront": "^1.74.0",
     "@aws-cdk/aws-cloudfront-origins": "^1.74.0",
     "@aws-cdk/aws-dynamodb": "^1.74.0",
     "@aws-cdk/aws-lambda": "^1.74.0",

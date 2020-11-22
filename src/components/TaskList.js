@@ -45,16 +45,16 @@ export default function TaskList() {
     setanimate(false);
   }
 
-  function subscribe() {
-    API.graphql({
-      query: subscription
-    })
-      .subscribe({
-        next: noteData => {
-          fetchNotes();
-        }
-      })
-  }
+  // function subscribe() {
+  //   API.graphql({
+  //     query: subscription
+  //   })
+  //     .subscribe({
+  //       next: noteData => {
+  //         fetchNotes();
+  //       }
+  //     })
+  // }
 
   const [todo, setTodo] = useState()
 
@@ -63,7 +63,7 @@ export default function TaskList() {
     const data = await API.graphql({ query })
     setTodo(data);
   }
-  subscribe()
+  // subscribe()
 
   useEffect(() => {
     fetchNotes();

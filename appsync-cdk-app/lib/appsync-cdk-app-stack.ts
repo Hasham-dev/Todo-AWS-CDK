@@ -11,7 +11,7 @@ export class AppsyncCdkAppStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const bucket = new s3.Bucket(this, "S3Bucket", {
+    const bucket = new s3.Bucket(this, "S3BucketCF", {
       publicReadAccess: true,
       websiteIndexDocument: "index.html",
     });
@@ -21,7 +21,7 @@ export class AppsyncCdkAppStack extends cdk.Stack {
       destinationBucket: bucket,
     });
     //cloudfront (aws cdn)
-    new cloudfront.Distribution(this, "distribution", {
+    new cloudfront.Distribution(this, "distributionCF", {
       defaultBehavior: { origin: new origins.S3Origin(bucket) },
     });
     // Creates the AppSync API
